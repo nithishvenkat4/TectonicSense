@@ -1,0 +1,3 @@
+Feature Group,Feature Count,Val Macro F1,Accuracy,Macro Precision,Macro Recall,Macro F1,Weighted F1,Training Time,Condition
+Group 2: Seismic + Geographic,12,0.92724,0.953426,0.930495,0.924513,0.927289,0.953127,26.78,PB2002 Metadata Removed (Seismic + Geographic Only)
+Group 4: Full Feature Set,26,0.9998,0.999889,0.999821,0.999761,0.999791,0.999889,20.26,Full Feature Set (With PB2002 Kinematic Metadata)

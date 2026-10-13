@@ -1,0 +1,5 @@
+event_id,true_label,predicted_label,confidence,is_correct,magnitude,depth_km,latitude,longitude,boundary_distance_km
+us20009vsi,OCB,CCB,0.981669,False,5.9,545.0,40.8551,131.6637,549.5949408615104
+us6000pzw2,OSR,OTF,0.97937,False,5.2,10.0,12.7672,48.7853,1.2133564326051829
+us1000e7ye,OCB,OTF,0.557687,False,4.6,10.0,35.9057,-17.883,169.04611952676623
+usb000fsh5,SUB,CCB,0.817423,False,4.1,10.0,36.027,11.547,303.9625640808616

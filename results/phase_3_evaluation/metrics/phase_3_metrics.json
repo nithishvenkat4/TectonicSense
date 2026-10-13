@@ -1,0 +1,224 @@
+{
+    "final_test_evaluation": {
+        "test_samples": 35964,
+        "inference_time_sec": 0.4962,
+        "latency_microseconds_per_sample": 13.8,
+        "accuracy": 0.999889,
+        "macro_precision": 0.999821,
+        "macro_recall": 0.999761,
+        "macro_f1": 0.999791,
+        "weighted_precision": 0.999889,
+        "weighted_recall": 0.999889,
+        "weighted_f1": 0.999889,
+        "per_class_metrics": {
+            "CCB": {
+                "precision": 0.999511,
+                "recall": 1.0,
+                "f1_score": 0.999756,
+                "support": 4092
+            },
+            "CRB": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1_score": 1.0,
+                "support": 3948
+            },
+            "CTF": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1_score": 1.0,
+                "support": 2614
+            },
+            "OCB": {
+                "precision": 1.0,
+                "recall": 0.998639,
+                "f1_score": 0.999319,
+                "support": 1470
+            },
+            "OSR": {
+                "precision": 1.0,
+                "recall": 0.999746,
+                "f1_score": 0.999873,
+                "support": 3931
+            },
+            "OTF": {
+                "precision": 0.999233,
+                "recall": 1.0,
+                "f1_score": 0.999617,
+                "support": 2607
+            },
+            "SUB": {
+                "precision": 1.0,
+                "recall": 0.999942,
+                "f1_score": 0.999971,
+                "support": 17302
+            }
+        }
+    },
+    "shap_explainability_summary": {
+        "sample_size": 2000,
+        "random_seed": 42,
+        "top_10_features": [
+            {
+                "feature": "divergent_component",
+                "mean_abs_shap": 2.0317578315734863
+            },
+            {
+                "feature": "boundary_elevation_m",
+                "mean_abs_shap": 1.4451218843460083
+            },
+            {
+                "feature": "absolute_divergent_component",
+                "mean_abs_shap": 0.877477765083313
+            },
+            {
+                "feature": "seafloor_age_ma",
+                "mean_abs_shap": 0.40820470452308655
+            },
+            {
+                "feature": "absolute_right_lateral_component",
+                "mean_abs_shap": 0.38914647698402405
+            },
+            {
+                "feature": "relative_velocity",
+                "mean_abs_shap": 0.26259133219718933
+            },
+            {
+                "feature": "tectonic_motion_magnitude",
+                "mean_abs_shap": 0.22011324763298035
+            },
+            {
+                "feature": "boundary_length_km",
+                "mean_abs_shap": 0.15942607820034027
+            },
+            {
+                "feature": "velocity_azimuth_cos",
+                "mean_abs_shap": 0.15253110229969025
+            },
+            {
+                "feature": "boundary_azimuth_sin",
+                "mean_abs_shap": 0.13800521194934845
+            }
+        ]
+    },
+    "feature_ablation_results": [
+        {
+            "Feature Group": "Group 1: Seismic Only",
+            "Feature Count": 4,
+            "Accuracy": 0.508926,
+            "Macro Precision": 0.333578,
+            "Macro Recall": 0.207562,
+            "Macro F1": 0.202823,
+            "Weighted F1": 0.406156,
+            "Training Time": 19.07
+        },
+        {
+            "Feature Group": "Group 2: Seismic + Geographic",
+            "Feature Count": 12,
+            "Accuracy": 0.953426,
+            "Macro Precision": 0.930495,
+            "Macro Recall": 0.924513,
+            "Macro F1": 0.927289,
+            "Weighted F1": 0.953127,
+            "Training Time": 26.78
+        },
+        {
+            "Feature Group": "Group 3: Limited Tectonic",
+            "Feature Count": 21,
+            "Accuracy": 0.99975,
+            "Macro Precision": 0.99963,
+            "Macro Recall": 0.999502,
+            "Macro F1": 0.999566,
+            "Weighted F1": 0.99975,
+            "Training Time": 22.15
+        },
+        {
+            "Feature Group": "Group 4: Full Feature Set",
+            "Feature Count": 26,
+            "Accuracy": 0.999889,
+            "Macro Precision": 0.999821,
+            "Macro Recall": 0.999761,
+            "Macro F1": 0.999791,
+            "Weighted F1": 0.999889,
+            "Training Time": 20.26
+        }
+    ],
+    "pb2002_metadata_ablation": [
+        {
+            "Feature Group": "Group 2: Seismic + Geographic",
+            "Feature Count": 12,
+            "Val Macro F1": 0.92724,
+            "Accuracy": 0.953426,
+            "Macro Precision": 0.930495,
+            "Macro Recall": 0.924513,
+            "Macro F1": 0.927289,
+            "Weighted F1": 0.953127,
+            "Training Time": 26.78,
+            "Condition": "PB2002 Metadata Removed (Seismic + Geographic Only)"
+        },
+        {
+            "Feature Group": "Group 4: Full Feature Set",
+            "Feature Count": 26,
+            "Val Macro F1": 0.9998,
+            "Accuracy": 0.999889,
+            "Macro Precision": 0.999821,
+            "Macro Recall": 0.999761,
+            "Macro F1": 0.999791,
+            "Weighted F1": 0.999889,
+            "Training Time": 20.26,
+            "Condition": "Full Feature Set (With PB2002 Kinematic Metadata)"
+        }
+    ],
+    "boundary_aware_generalization": {
+        "model": "XGBoost (Boundary-Aware)",
+        "training_time_sec": 19.97,
+        "validation_metrics": {
+            "accuracy": 0.9574,
+            "macro_precision": 0.799238,
+            "macro_recall": 0.803147,
+            "macro_f1": 0.7972,
+            "weighted_f1": 0.955609
+        },
+        "test_metrics": {
+            "accuracy": 0.79944,
+            "macro_precision": 0.798884,
+            "macro_recall": 0.807814,
+            "macro_f1": 0.793487,
+            "weighted_f1": 0.800534
+        }
+    },
+    "error_analysis_summary": {
+        "total_test_observations": 35964,
+        "total_errors": 4,
+        "overall_error_rate_percent": 0.0111,
+        "confusion_pairs": {
+            "OCB -> CCB": 1,
+            "OSR -> OTF": 1,
+            "OCB -> OTF": 1,
+            "SUB -> CCB": 1
+        },
+        "errors_by_true_class": {
+            "OCB": 2,
+            "OSR": 1,
+            "SUB": 1
+        },
+        "errors_by_magnitude_range": {
+            "4.0-5.0": 2,
+            "5.0-6.0": 2,
+            "6.0-7.0": 0,
+            "7.0+": 0
+        },
+        "errors_by_depth_range": {
+            "Shallow (0-35km)": 3,
+            "Deep (300km+)": 1,
+            "Intermediate-Shallow (35-70km)": 0,
+            "Intermediate (70-300km)": 0
+        },
+        "errors_by_boundary_distance": {
+            "Distal (>100km)": 2,
+            "Proximal (<20km)": 1,
+            "Near (20-50km)": 0,
+            "Intermediate (50-100km)": 0
+        }
+    }
+}

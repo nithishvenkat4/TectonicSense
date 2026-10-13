@@ -1,0 +1,38 @@
+{
+    "train_boundaries_count": 127,
+    "val_boundaries_count": 27,
+    "test_boundaries_count": 28,
+    "train_observations": 145287,
+    "val_observations": 53380,
+    "test_observations": 41090,
+    "boundary_id_overlap_train_val": 0,
+    "boundary_id_overlap_train_test": 0,
+    "boundary_id_overlap_val_test": 0,
+    "train_class_distribution": {
+        "SUB": 56309,
+        "CRB": 22496,
+        "OSR": 21636,
+        "CTF": 14498,
+        "CCB": 13316,
+        "OTF": 12474,
+        "OCB": 4558
+    },
+    "val_class_distribution": {
+        "SUB": 36046,
+        "CCB": 9246,
+        "CRB": 2260,
+        "OTF": 2062,
+        "OSR": 1732,
+        "CTF": 1568,
+        "OCB": 466
+    },
+    "test_class_distribution": {
+        "SUB": 22992,
+        "OCB": 4774,
+        "CCB": 4719,
+        "OTF": 2842,
+        "OSR": 2838,
+        "CRB": 1560,
+        "CTF": 1365
+    }
+}

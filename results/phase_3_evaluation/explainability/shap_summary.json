@@ -1,0 +1,162 @@
+{
+    "sample_size": 2000,
+    "random_seed": 42,
+    "calculation_duration_sec": 5.99,
+    "target_classes": [
+        "CCB",
+        "CRB",
+        "CTF",
+        "OCB",
+        "OSR",
+        "OTF",
+        "SUB"
+    ],
+    "top_10_features": [
+        {
+            "feature": "divergent_component",
+            "mean_abs_shap": 2.0317578315734863
+        },
+        {
+            "feature": "boundary_elevation_m",
+            "mean_abs_shap": 1.4451218843460083
+        },
+        {
+            "feature": "absolute_divergent_component",
+            "mean_abs_shap": 0.877477765083313
+        },
+        {
+            "feature": "seafloor_age_ma",
+            "mean_abs_shap": 0.40820470452308655
+        },
+        {
+            "feature": "absolute_right_lateral_component",
+            "mean_abs_shap": 0.38914647698402405
+        },
+        {
+            "feature": "relative_velocity",
+            "mean_abs_shap": 0.26259133219718933
+        },
+        {
+            "feature": "tectonic_motion_magnitude",
+            "mean_abs_shap": 0.22011324763298035
+        },
+        {
+            "feature": "boundary_length_km",
+            "mean_abs_shap": 0.15942607820034027
+        },
+        {
+            "feature": "velocity_azimuth_cos",
+            "mean_abs_shap": 0.15253110229969025
+        },
+        {
+            "feature": "boundary_azimuth_sin",
+            "mean_abs_shap": 0.13800521194934845
+        }
+    ],
+    "all_feature_importance": [
+        {
+            "feature": "divergent_component",
+            "mean_abs_shap": 2.0317578315734863
+        },
+        {
+            "feature": "boundary_elevation_m",
+            "mean_abs_shap": 1.4451218843460083
+        },
+        {
+            "feature": "absolute_divergent_component",
+            "mean_abs_shap": 0.877477765083313
+        },
+        {
+            "feature": "seafloor_age_ma",
+            "mean_abs_shap": 0.40820470452308655
+        },
+        {
+            "feature": "absolute_right_lateral_component",
+            "mean_abs_shap": 0.38914647698402405
+        },
+        {
+            "feature": "relative_velocity",
+            "mean_abs_shap": 0.26259133219718933
+        },
+        {
+            "feature": "tectonic_motion_magnitude",
+            "mean_abs_shap": 0.22011324763298035
+        },
+        {
+            "feature": "boundary_length_km",
+            "mean_abs_shap": 0.15942607820034027
+        },
+        {
+            "feature": "velocity_azimuth_cos",
+            "mean_abs_shap": 0.15253110229969025
+        },
+        {
+            "feature": "boundary_azimuth_sin",
+            "mean_abs_shap": 0.13800521194934845
+        },
+        {
+            "feature": "right_lateral_component",
+            "mean_abs_shap": 0.12731869518756866
+        },
+        {
+            "feature": "latitude_cos",
+            "mean_abs_shap": 0.10889845341444016
+        },
+        {
+            "feature": "longitude_sin",
+            "mean_abs_shap": 0.10604844987392426
+        },
+        {
+            "feature": "boundary_azimuth_cos",
+            "mean_abs_shap": 0.0994875505566597
+        },
+        {
+            "feature": "velocity_azimuth_sin",
+            "mean_abs_shap": 0.09205485880374908
+        },
+        {
+            "feature": "longitude",
+            "mean_abs_shap": 0.08370305597782135
+        },
+        {
+            "feature": "longitude_cos",
+            "mean_abs_shap": 0.06640131771564484
+        },
+        {
+            "feature": "latitude",
+            "mean_abs_shap": 0.062489479780197144
+        },
+        {
+            "feature": "latitude_sin",
+            "mean_abs_shap": 0.02790634147822857
+        },
+        {
+            "feature": "boundary_distance_km",
+            "mean_abs_shap": 0.022193878889083862
+        },
+        {
+            "feature": "depth_km",
+            "mean_abs_shap": 0.013771717436611652
+        },
+        {
+            "feature": "depth_abs_km",
+            "mean_abs_shap": 0.012738583609461784
+        },
+        {
+            "feature": "orogen_flag",
+            "mean_abs_shap": 0.01048205979168415
+        },
+        {
+            "feature": "log_boundary_distance_km",
+            "mean_abs_shap": 0.004967846442013979
+        },
+        {
+            "feature": "magnitude",
+            "mean_abs_shap": 0.0037673297338187695
+        },
+        {
+            "feature": "magnitude_squared",
+            "mean_abs_shap": 0.0012950118398293853
+        }
+    ]
+}

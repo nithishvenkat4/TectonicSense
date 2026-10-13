@@ -1,0 +1,114 @@
+# ==============================================================================
+# TectonicSense — Production Final Model Configuration
+# Phase 4: Final Model & Productionization
+# ==============================================================================
+
+project:
+  name: "TectonicSense"
+  description: "Explainable Machine Learning for Tectonic Plate Boundary Classification Using Seismic and Geospatial Features"
+  version: "1.0.0"
+  author: "TectonicSense Research Team"
+
+task:
+  type: "multiclass_classification"
+  description: "Classification of tectonic plate-boundary regimes associated with seismic and geospatial observations"
+  target_column: "boundary_class"
+  number_of_classes: 7
+
+reproducibility:
+  random_seed: 42
+
+model:
+  name: "Tuned XGBoost"
+  framework: "xgboost"
+  estimator: "XGBClassifier"
+  hyperparameters:
+    n_estimators: 120
+    max_depth: 9
+    learning_rate: 0.15595246363789106
+    subsample: 0.7
+    colsample_bytree: 0.8
+    min_child_weight: 2
+    reg_lambda: 0.0359375612249994
+    objective: "multi:softprob"
+    eval_metric: "mlogloss"
+    tree_method: "hist"
+    random_state: 42
+    n_jobs: -1
+
+data:
+  splits:
+    train_path: "data/processed/splits/train.csv"
+    validation_path: "data/processed/splits/validation.csv"
+    test_path: "data/processed/splits/test.csv"
+  dataset_path: "data/processed/tectonicsense_ml_dataset.csv"
+  split_ratios:
+    train: 0.70
+    validation: 0.15
+    test: 0.15
+  split_strategy: "stratified_random"
+
+features:
+  count: 26
+  feature_list:
+    - "magnitude"
+    - "magnitude_squared"
+    - "depth_km"
+    - "depth_abs_km"
+    - "longitude"
+    - "latitude"
+    - "longitude_sin"
+    - "longitude_cos"
+    - "latitude_sin"
+    - "latitude_cos"
+    - "boundary_distance_km"
+    - "log_boundary_distance_km"
+    - "boundary_length_km"
+    - "boundary_azimuth_sin"
+    - "boundary_azimuth_cos"
+    - "relative_velocity"
+    - "velocity_azimuth_sin"
+    - "velocity_azimuth_cos"
+    - "divergent_component"
+    - "right_lateral_component"
+    - "absolute_divergent_component"
+    - "absolute_right_lateral_component"
+    - "tectonic_motion_magnitude"
+    - "boundary_elevation_m"
+    - "seafloor_age_ma"
+    - "orogen_flag"
+
+labels:
+  target: "boundary_class"
+  classes:
+    - "CCB"
+    - "CRB"
+    - "CTF"
+    - "OCB"
+    - "OSR"
+    - "OTF"
+    - "SUB"
+  mapping:
+    0: "CCB"
+    1: "CRB"
+    2: "CTF"
+    3: "OCB"
+    4: "OSR"
+    5: "OTF"
+    6: "SUB"
+  inverse_mapping:
+    "CCB": 0
+    "CRB": 1
+    "CTF": 2
+    "OCB": 3
+    "OSR": 4
+    "OTF": 5
+    "SUB": 6
+
+artifacts:
+  output_dir: "models/final"
+  model_file: "models/final/tectonicsense_xgboost.joblib"
+  feature_names_file: "models/final/feature_names.json"
+  label_mapping_file: "models/final/label_mapping.json"
+  metadata_file: "models/final/metadata.json"
+  results_dir: "results/phase_4_final_model"

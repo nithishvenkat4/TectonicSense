@@ -1,0 +1,100 @@
+{
+    "status": "VERIFIED",
+    "timestamp": "2026-10-13T18:45:08.103871+00:00",
+    "model": {
+        "type": "XGBClassifier",
+        "framework": "xgboost",
+        "framework_version": "3.0.5",
+        "feature_count": 26,
+        "class_count": 7
+    },
+    "artifact_checks": {
+        "model_artifact": {
+            "path": "models\\final\\tectonicsense_xgboost.joblib",
+            "size_bytes": 842753,
+            "loaded": true
+        },
+        "feature_names": {
+            "path": "models\\final\\feature_names.json",
+            "count": 26,
+            "loaded": true
+        },
+        "label_mapping": {
+            "path": "models\\final\\label_mapping.json",
+            "classes": [
+                "CCB",
+                "CRB",
+                "CTF",
+                "OCB",
+                "OSR",
+                "OTF",
+                "SUB"
+            ],
+            "loaded": true
+        },
+        "metadata": {
+            "path": "models\\final\\metadata.json",
+            "model_name": "Tuned XGBoost",
+            "framework_version": "3.0.5",
+            "loaded": true
+        }
+    },
+    "structure_checks": {
+        "is_xgb_classifier": true,
+        "n_features_in": 26,
+        "feature_list_length": 26,
+        "n_classes": 7,
+        "classes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "label_mapping_classes": [
+            "CCB",
+            "CRB",
+            "CTF",
+            "OCB",
+            "OSR",
+            "OTF",
+            "SUB"
+        ]
+    },
+    "inference_checks": {
+        "single_inference": {
+            "predicted_class": "CTF",
+            "predicted_class_id": 2,
+            "confidence": 0.9999691247940063,
+            "valid": true
+        },
+        "batch_inference": {
+            "batch_size": 10,
+            "all_valid": true
+        },
+        "probability_normalization": {
+            "probability_sum": 1.0000000477427875,
+            "is_normalized": true
+        }
+    },
+    "determinism_checks": {
+        "same_class": true,
+        "same_class_id": true,
+        "same_confidence": true,
+        "max_probability_divergence": 0.0,
+        "deterministic": true
+    },
+    "invalid_input_checks": {
+        "missing_feature_rejected": true,
+        "non_numeric_rejected": true,
+        "nan_rejected": true,
+        "infinite_rejected": true,
+        "incorrect_feature_count_rejected": true
+    },
+    "checks_passed_count": 16,
+    "checks_failed_count": 0,
+    "failed_checks": [],
+    "all_checks_passed": true
+}

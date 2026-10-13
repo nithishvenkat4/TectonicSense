@@ -1,0 +1,78 @@
+{
+  "project": "TectonicSense",
+  "stage": "Step 3C - Feature Engineering",
+  "input_dataset": "data\\interim\\earthquakes_pb2002_refined.csv",
+  "output_dataset": "data\\processed\\tectonicsense_ml_dataset.csv",
+  "rows": 239757,
+  "original_columns": 23,
+  "final_feature_count": 26,
+  "target": "boundary_class",
+  "features": [
+    "magnitude",
+    "magnitude_squared",
+    "depth_km",
+    "depth_abs_km",
+    "longitude",
+    "latitude",
+    "longitude_sin",
+    "longitude_cos",
+    "latitude_sin",
+    "latitude_cos",
+    "boundary_distance_km",
+    "log_boundary_distance_km",
+    "boundary_length_km",
+    "boundary_azimuth_sin",
+    "boundary_azimuth_cos",
+    "relative_velocity",
+    "velocity_azimuth_sin",
+    "velocity_azimuth_cos",
+    "divergent_component",
+    "right_lateral_component",
+    "absolute_divergent_component",
+    "absolute_right_lateral_component",
+    "tectonic_motion_magnitude",
+    "boundary_elevation_m",
+    "seafloor_age_ma",
+    "orogen_flag"
+  ],
+  "excluded_identifier_columns": [
+    "event_id",
+    "boundary_id",
+    "boundary_step_id"
+  ],
+  "excluded_raw_text_columns": [
+    "place",
+    "magnitude_type"
+  ],
+  "excluded_raw_metadata_columns": [
+    "time",
+    "event_type",
+    "status"
+  ],
+  "target_distribution": {
+    "CCB": 27281,
+    "CRB": 26316,
+    "CTF": 17431,
+    "OCB": 9798,
+    "OSR": 26206,
+    "OTF": 17378,
+    "SUB": 115347
+  },
+  "missing_values": 0,
+  "feature_engineering": {
+    "depth_abs_km": "Absolute earthquake depth",
+    "magnitude_squared": "Squared earthquake magnitude",
+    "longitude_sin": "Sine encoding of longitude",
+    "longitude_cos": "Cosine encoding of longitude",
+    "latitude_sin": "Sine encoding of latitude",
+    "latitude_cos": "Cosine encoding of latitude",
+    "log_boundary_distance_km": "log1p transformed boundary distance",
+    "boundary_azimuth_sin": "Sine encoding of boundary azimuth",
+    "boundary_azimuth_cos": "Cosine encoding of boundary azimuth",
+    "velocity_azimuth_sin": "Sine encoding of velocity azimuth",
+    "velocity_azimuth_cos": "Cosine encoding of velocity azimuth",
+    "absolute_divergent_component": "Absolute divergent motion",
+    "absolute_right_lateral_component": "Absolute right-lateral motion",
+    "tectonic_motion_magnitude": "Magnitude of combined divergent and right-lateral components"
+  }
+}

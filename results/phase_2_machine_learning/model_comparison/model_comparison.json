@@ -1,0 +1,86 @@
+{
+    "ranking_by_macro_f1": [
+        {
+            "Model": "Tuned XGBoost",
+            "Accuracy": 0.9999,
+            "Macro Precision": 0.9998,
+            "Macro Recall": 0.9998,
+            "Macro F1": 0.9998,
+            "Weighted F1": 0.9999,
+            "Training Time": 19.0
+        },
+        {
+            "Model": "Tuned LightGBM",
+            "Accuracy": 0.9998,
+            "Macro Precision": 0.9997,
+            "Macro Recall": 0.9997,
+            "Macro F1": 0.9997,
+            "Weighted F1": 0.9998,
+            "Training Time": 19.35
+        },
+        {
+            "Model": "HistGradientBoosting",
+            "Accuracy": 0.9998,
+            "Macro Precision": 0.9997,
+            "Macro Recall": 0.9997,
+            "Macro F1": 0.9997,
+            "Weighted F1": 0.9998,
+            "Training Time": 30.19
+        },
+        {
+            "Model": "LightGBM",
+            "Accuracy": 0.9998,
+            "Macro Precision": 0.9996,
+            "Macro Recall": 0.9996,
+            "Macro F1": 0.9996,
+            "Weighted F1": 0.9998,
+            "Training Time": 19.54
+        },
+        {
+            "Model": "XGBoost",
+            "Accuracy": 0.9998,
+            "Macro Precision": 0.9997,
+            "Macro Recall": 0.9996,
+            "Macro F1": 0.9996,
+            "Weighted F1": 0.9998,
+            "Training Time": 21.25
+        },
+        {
+            "Model": "RandomForest",
+            "Accuracy": 0.9998,
+            "Macro Precision": 0.9997,
+            "Macro Recall": 0.9996,
+            "Macro F1": 0.9996,
+            "Weighted F1": 0.9998,
+            "Training Time": 22.7
+        },
+        {
+            "Model": "CatBoost",
+            "Accuracy": 0.9983,
+            "Macro Precision": 0.9974,
+            "Macro Recall": 0.9969,
+            "Macro F1": 0.9972,
+            "Weighted F1": 0.9983,
+            "Training Time": 43.23
+        },
+        {
+            "Model": "LogisticRegression",
+            "Accuracy": 0.941,
+            "Macro Precision": 0.906,
+            "Macro Recall": 0.902,
+            "Macro F1": 0.9036,
+            "Weighted F1": 0.9407,
+            "Training Time": 21.92
+        },
+        {
+            "Model": "DummyClassifier",
+            "Accuracy": 0.4811,
+            "Macro Precision": 0.0687,
+            "Macro Recall": 0.1429,
+            "Macro F1": 0.0928,
+            "Weighted F1": 0.3126,
+            "Training Time": 0.1
+        }
+    ],
+    "total_models_evaluated": 9
+}

@@ -1,0 +1,3 @@
+Model,Accuracy,Macro Precision,Macro Recall,Macro F1,Weighted F1,Training Time
+Tuned XGBoost,0.9999,0.9998,0.9998,0.9998,0.9999,19.0
+Tuned LightGBM,0.9998,0.9997,0.9997,0.9997,0.9998,19.35

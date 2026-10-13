@@ -1,0 +1,43 @@
+{
+    "best_candidate_model": "Tuned XGBoost",
+    "model_type": "XGBClassifier",
+    "validation_macro_f1": 0.9998,
+    "validation_metrics": {
+        "accuracy": 0.9999,
+        "macro_precision": 0.9998,
+        "macro_recall": 0.9998,
+        "macro_f1": 0.9998,
+        "weighted_f1": 0.9999,
+        "training_time_sec": 19.0
+    },
+    "hyperparameters": {
+        "n_estimators": 120,
+        "max_depth": 9,
+        "learning_rate": 0.15595246363789106,
+        "subsample": 0.7,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 2,
+        "reg_lambda": 0.0359375612249994
+    },
+    "random_seed": 42,
+    "training_configuration": {
+        "objective": "multi:softprob",
+        "eval_metric": "mlogloss",
+        "tree_method": "hist",
+        "n_jobs": -1
+    },
+    "comparison_runner_up": {
+        "model": "Tuned LightGBM",
+        "validation_macro_f1": 0.9997,
+        "hyperparameters": {
+            "n_estimators": 140,
+            "num_leaves": 40,
+            "max_depth": 11,
+            "learning_rate": 0.1123455282015582,
+            "min_child_samples": 60,
+            "subsample": 0.9,
+            "colsample_bytree": 0.6,
+            "reg_lambda": 0.0023847571838925864
+        }
+    }
+}

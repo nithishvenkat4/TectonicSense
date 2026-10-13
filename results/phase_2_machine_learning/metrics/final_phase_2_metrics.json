@@ -1,0 +1,53 @@
+{
+    "dataset": {
+        "total_observations": 239757,
+        "train_observations": 167829,
+        "validation_observations": 35964,
+        "test_observations": 35964,
+        "feature_count": 26,
+        "target_classes_count": 7,
+        "target_classes": [
+            "CCB",
+            "CRB",
+            "CTF",
+            "OCB",
+            "OSR",
+            "OTF",
+            "SUB"
+        ]
+    },
+    "best_candidate_model": {
+        "name": "Tuned XGBoost",
+        "model_type": "XGBClassifier",
+        "validation_accuracy": 0.9999,
+        "validation_macro_precision": 0.9998,
+        "validation_macro_recall": 0.9998,
+        "validation_macro_f1": 0.9998,
+        "validation_weighted_f1": 0.9999,
+        "training_time_sec": 19.0
+    },
+    "optimization": {
+        "method": "Optuna-based sequential hyperparameter optimization using the TPE sampler",
+        "sampler": "TPESampler (seed=42)",
+        "trials_per_model": 30,
+        "total_trials": 60,
+        "optimized_models": [
+            "XGBoost",
+            "LightGBM"
+        ],
+        "optimization_objective": "Validation Macro F1",
+        "best_parameters": {
+            "n_estimators": 120,
+            "max_depth": 9,
+            "learning_rate": 0.15595246363789106,
+            "subsample": 0.7,
+            "colsample_bytree": 0.8,
+            "min_child_weight": 2,
+            "reg_lambda": 0.0359375612249994
+        }
+    },
+    "reproducibility": {
+        "random_seed": 42,
+        "split_strategy": "Stratified random split (70% train, 15% validation, 15% test)"
+    }
+}

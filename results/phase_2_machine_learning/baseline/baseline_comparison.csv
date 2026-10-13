@@ -1,0 +1,4 @@
+Model,Accuracy,Macro Precision,Macro Recall,Macro F1,Weighted F1,Training Time (s),Inference Time (s)
+RandomForestClassifier,0.9998,0.9997,0.9996,0.9996,0.9998,22.7,0.1814
+LogisticRegression,0.941,0.906,0.902,0.9036,0.9407,21.92,0.023
+DummyClassifier,0.4811,0.0687,0.1429,0.0928,0.3126,0.1,0.0009

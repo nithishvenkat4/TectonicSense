@@ -1,0 +1,5 @@
+Model,Accuracy,Macro Precision,Macro Recall,Macro F1,Weighted F1,Training Time (s),Inference Time (s)
+HistGradientBoosting,0.9998,0.9997,0.9997,0.9997,0.9998,30.19,1.8265
+XGBoost,0.9998,0.9997,0.9996,0.9996,0.9998,21.25,0.3243
+LightGBM,0.9998,0.9996,0.9996,0.9996,0.9998,19.54,1.016
+CatBoost,0.9983,0.9974,0.9969,0.9972,0.9983,43.23,0.0647

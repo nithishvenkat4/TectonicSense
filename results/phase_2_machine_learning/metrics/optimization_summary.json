@@ -1,0 +1,240 @@
+{
+    "trials_executed_per_model": 30,
+    "total_trials_executed": 60,
+    "primary_metric": "Macro F1 (Validation)",
+    "best_parameters": {
+        "XGBoost": {
+            "best_params": {
+                "n_estimators": 120,
+                "max_depth": 9,
+                "learning_rate": 0.15595246363789106,
+                "subsample": 0.7,
+                "colsample_bytree": 0.8,
+                "min_child_weight": 2,
+                "reg_lambda": 0.0359375612249994
+            },
+            "best_val_macro_f1": 0.9998,
+            "best_trial_number": 28,
+            "total_trials": 30,
+            "optimization_time_sec": 505.16
+        },
+        "LightGBM": {
+            "best_params": {
+                "n_estimators": 140,
+                "num_leaves": 40,
+                "max_depth": 11,
+                "learning_rate": 0.1123455282015582,
+                "min_child_samples": 60,
+                "subsample": 0.9,
+                "colsample_bytree": 0.6,
+                "reg_lambda": 0.0023847571838925864
+            },
+            "best_val_macro_f1": 0.999724,
+            "best_trial_number": 12,
+            "total_trials": 30,
+            "optimization_time_sec": 573.91
+        }
+    },
+    "tuned_models_evaluation": {
+        "XGBoost_Tuned": {
+            "train_metrics": {
+                "accuracy": 1.0,
+                "macro_precision": 1.0,
+                "macro_recall": 1.0,
+                "macro_f1": 1.0,
+                "weighted_f1": 1.0,
+                "training_time_sec": 19.0,
+                "inference_time_sec": 0.0
+            },
+            "validation_metrics": {
+                "accuracy": 0.9999,
+                "macro_precision": 0.9998,
+                "macro_recall": 0.9998,
+                "macro_f1": 0.9998,
+                "weighted_f1": 0.9999,
+                "training_time_sec": 19.0,
+                "inference_time_sec": 0.2448
+            },
+            "validation_report": {
+                "CCB": {
+                    "precision": 0.9992673992673993,
+                    "recall": 1.0,
+                    "f1-score": 0.9996335654085746,
+                    "support": 4092.0
+                },
+                "CRB": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 3947.0
+                },
+                "CTF": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 2615.0
+                },
+                "OCB": {
+                    "precision": 1.0,
+                    "recall": 0.9993192648059904,
+                    "f1-score": 0.9996595165134491,
+                    "support": 1469.0
+                },
+                "OSR": {
+                    "precision": 0.9997456118036123,
+                    "recall": 0.9997456118036123,
+                    "f1-score": 0.9997456118036123,
+                    "support": 3931.0
+                },
+                "OTF": {
+                    "precision": 0.9996164173379364,
+                    "recall": 0.9996164173379364,
+                    "f1-score": 0.9996164173379364,
+                    "support": 2607.0
+                },
+                "SUB": {
+                    "precision": 1.0,
+                    "recall": 0.9998844131075536,
+                    "f1-score": 0.9999422032135014,
+                    "support": 17303.0
+                },
+                "accuracy": 0.9998609720831944,
+                "macro avg": {
+                    "precision": 0.9998042040584211,
+                    "recall": 0.9997951010078703,
+                    "f1-score": 0.9997996163252961,
+                    "support": 35964.0
+                },
+                "weighted avg": {
+                    "precision": 0.9998610331943665,
+                    "recall": 0.9998609720831944,
+                    "f1-score": 0.9998609810258413,
+                    "support": 35964.0
+                }
+            }
+        },
+        "LightGBM_Tuned": {
+            "train_metrics": {
+                "accuracy": 1.0,
+                "macro_precision": 1.0,
+                "macro_recall": 1.0,
+                "macro_f1": 1.0,
+                "weighted_f1": 1.0,
+                "training_time_sec": 19.35,
+                "inference_time_sec": 0.0
+            },
+            "validation_metrics": {
+                "accuracy": 0.9998,
+                "macro_precision": 0.9997,
+                "macro_recall": 0.9997,
+                "macro_f1": 0.9997,
+                "weighted_f1": 0.9998,
+                "training_time_sec": 19.35,
+                "inference_time_sec": 1.4575
+            },
+            "validation_report": {
+                "CCB": {
+                    "precision": 0.9992672203224231,
+                    "recall": 0.9997556207233627,
+                    "f1-score": 0.9995113608600049,
+                    "support": 4092.0
+                },
+                "CRB": {
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1-score": 1.0,
+                    "support": 3947.0
+                },
+                "CTF": {
+                    "precision": 0.9996177370030581,
+                    "recall": 1.0,
+                    "f1-score": 0.9998088319632957,
+                    "support": 2615.0
+                },
+                "OCB": {
+                    "precision": 1.0,
+                    "recall": 0.998638529611981,
+                    "f1-score": 0.9993188010899182,
+                    "support": 1469.0
+                },
+                "OSR": {
+                    "precision": 1.0,
+                    "recall": 0.9997456118036123,
+                    "f1-score": 0.9998727897214095,
+                    "support": 3931.0
+                },
+                "OTF": {
+                    "precision": 0.9992334227673438,
+                    "recall": 1.0,
+                    "f1-score": 0.9996165644171779,
+                    "support": 2607.0
+                },
+                "SUB": {
+                    "precision": 1.0,
+                    "recall": 0.9998844131075536,
+                    "f1-score": 0.9999422032135014,
+                    "support": 17303.0
+                },
+                "accuracy": 0.9998331664998331,
+                "macro avg": {
+                    "precision": 0.9997311971561179,
+                    "recall": 0.99971773932093,
+                    "f1-score": 0.9997243644664724,
+                    "support": 35964.0
+                },
+                "weighted avg": {
+                    "precision": 0.999833260509866,
+                    "recall": 0.9998331664998331,
+                    "f1-score": 0.9998331710893645,
+                    "support": 35964.0
+                }
+            }
+        }
+    },
+    "tuned_vs_untuned_summary": [
+        {
+            "Model": "XGBoost (Tuned)",
+            "Status": "Tuned (Optuna)",
+            "Accuracy": 0.9999,
+            "Macro Precision": 0.9998,
+            "Macro Recall": 0.9998,
+            "Macro F1": 0.9998,
+            "Weighted F1": 0.9999,
+            "Training Time": 19.0,
+            "Inference Time": 0.2448
+        },
+        {
+            "Model": "LightGBM (Tuned)",
+            "Status": "Tuned (Optuna)",
+            "Accuracy": 0.9998,
+            "Macro Precision": 0.9997,
+            "Macro Recall": 0.9997,
+            "Macro F1": 0.9997,
+            "Weighted F1": 0.9998,
+            "Training Time": 19.35,
+            "Inference Time": 1.4575
+        },
+        {
+            "Model": "XGBoost (Default)",
+            "Status": "Untuned",
+            "Accuracy": 0.9998,
+            "Macro Precision": 0.9997,
+            "Macro Recall": 0.9996,
+            "Macro F1": 0.9996,
+            "Weighted F1": 0.9998,
+            "Training Time": 21.25,
+            "Inference Time": 0.3243
+        },
+        {
+            "Model": "LightGBM (Default)",
+            "Status": "Untuned",
+            "Accuracy": 0.9998,
+            "Macro Precision": 0.9996,
+            "Macro Recall": 0.9996,
+            "Macro F1": 0.9996,
+            "Weighted F1": 0.9998,
+            "Training Time": 19.54,
+            "Inference Time": 1.016
+        }
+    ]
+}

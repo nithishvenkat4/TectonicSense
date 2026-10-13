@@ -10,7 +10,7 @@ env/
 
 # Large USGS raw data
 data/raw/usgs/*.csv
-
+data/processed/splits/
 # Large generated datasets
 data/interim/*.csv
 data/processed/*.csv

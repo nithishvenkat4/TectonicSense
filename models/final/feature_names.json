@@ -1,0 +1,31 @@
+{
+    "feature_count": 26,
+    "features": [
+        "magnitude",
+        "magnitude_squared",
+        "depth_km",
+        "depth_abs_km",
+        "longitude",
+        "latitude",
+        "longitude_sin",
+        "longitude_cos",
+        "latitude_sin",
+        "latitude_cos",
+        "boundary_distance_km",
+        "log_boundary_distance_km",
+        "boundary_length_km",
+        "boundary_azimuth_sin",
+        "boundary_azimuth_cos",
+        "relative_velocity",
+        "velocity_azimuth_sin",
+        "velocity_azimuth_cos",
+        "divergent_component",
+        "right_lateral_component",
+        "absolute_divergent_component",
+        "absolute_right_lateral_component",
+        "tectonic_motion_magnitude",
+        "boundary_elevation_m",
+        "seafloor_age_ma",
+        "orogen_flag"
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "project": "TectonicSense",
+    "stage": "Dataset Splitting",
+    "input_file": "D:\\TectonicSense\\data\\processed\\tectonicsense_ml_dataset.csv",
+    "total_rows": 239757,
+    "split_strategy": "Stratified random split",
+    "random_state": 42,
+    "ratios": {
+        "train": 0.7,
+        "validation": 0.15,
+        "test": 0.15
+    },
+    "sizes": {
+        "train": 167829,
+        "validation": 35964,
+        "test": 35964
+    },
+    "files": {
+        "train": "D:\\TectonicSense\\data\\processed\\splits\\train.csv",
+        "validation": "D:\\TectonicSense\\data\\processed\\splits\\validation.csv",
+        "test": "D:\\TectonicSense\\data\\processed\\splits\\test.csv"
+    },
+    "class_distribution": {
+        "train": {
+            "SUB": 80742,
+            "CCB": 19097,
+            "CRB": 18421,
+            "OSR": 18344,
+            "CTF": 12202,
+            "OTF": 12164,
+            "OCB": 6859
+        },
+        "validation": {
+            "SUB": 17303,
+            "CCB": 4092,
+            "CRB": 3947,
+            "OSR": 3931,
+            "CTF": 2615,
+            "OTF": 2607,
+            "OCB": 1469
+        },
+        "test": {
+            "SUB": 17302,
+            "CCB": 4092,
+            "CRB": 3948,
+            "OSR": 3931,
+            "CTF": 2614,
+            "OTF": 2607,
+            "OCB": 1470
+        }
+    },
+    "target": "boundary_class"
+}

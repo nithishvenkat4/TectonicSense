@@ -1,0 +1,242 @@
+{
+    "project": "TectonicSense",
+    "evaluation_status": "FINAL",
+    "model": {
+        "name": "Tuned XGBoost",
+        "estimator": "XGBClassifier",
+        "framework": "xgboost",
+        "framework_version": "3.0.5",
+        "artifact": "models/final/tectonicsense_xgboost.joblib",
+        "feature_count": 26,
+        "class_count": 7,
+        "classes": [
+            "CCB",
+            "CRB",
+            "CTF",
+            "OCB",
+            "OSR",
+            "OTF",
+            "SUB"
+        ]
+    },
+    "random_stratified_test": {
+        "evaluation_type": "Random stratified test evaluation (untouched held-out split)",
+        "test_samples": 35964,
+        "accuracy": 0.999889,
+        "macro_precision": 0.999821,
+        "macro_recall": 0.999761,
+        "macro_f1": 0.999791,
+        "weighted_precision": 0.999889,
+        "weighted_recall": 0.999889,
+        "weighted_f1": 0.999889,
+        "misclassifications": 4,
+        "error_rate": 0.000111,
+        "inference_time_sec": 0.4962,
+        "latency_microseconds_per_sample": 13.8,
+        "per_class_f1": {
+            "CCB": 0.999756,
+            "CRB": 1.0,
+            "CTF": 1.0,
+            "OCB": 0.999319,
+            "OSR": 0.999873,
+            "OTF": 0.999617,
+            "SUB": 0.999971
+        }
+    },
+    "boundary_aware_evaluation": {
+        "evaluation_type": "Boundary-aware disjoint evaluation (zero boundary overlap)",
+        "train_boundaries": 127,
+        "validation_boundaries": 27,
+        "test_boundaries": 28,
+        "boundary_overlap": 0,
+        "train_observations": 145287,
+        "val_observations": 53380,
+        "test_observations": 41090,
+        "accuracy": 0.79944,
+        "macro_precision": 0.798884,
+        "macro_recall": 0.807814,
+        "macro_f1": 0.793487,
+        "weighted_f1": 0.800534,
+        "scientific_assessment": "Demonstrates meaningful out-of-boundary generalization under the evaluated PB2002 split (79.35% Macro F1), distinguishing true geographic transfer from spatial interpolation"
+    },
+    "feature_ablation": {
+        "evaluation_type": "Progressive feature group ablation on held-out test split",
+        "seismic_only": {
+            "group_name": "Group 1: Seismic Only",
+            "feature_count": 4,
+            "features": ["magnitude", "magnitude_squared", "depth_km", "depth_abs_km"],
+            "accuracy": 0.508926,
+            "macro_precision": 0.333578,
+            "macro_recall": 0.207562,
+            "macro_f1": 0.202823,
+            "weighted_f1": 0.406156,
+            "training_time_sec": 19.07
+        },
+        "seismic_geographic": {
+            "group_name": "Group 2: Seismic + Geographic",
+            "feature_count": 12,
+            "accuracy": 0.953426,
+            "macro_precision": 0.930495,
+            "macro_recall": 0.924513,
+            "macro_f1": 0.927289,
+            "weighted_f1": 0.953127,
+            "training_time_sec": 26.78
+        },
+        "limited_tectonic": {
+            "group_name": "Group 3: Limited Tectonic",
+            "feature_count": 21,
+            "accuracy": 0.99975,
+            "macro_precision": 0.99963,
+            "macro_recall": 0.999502,
+            "macro_f1": 0.999566,
+            "weighted_f1": 0.99975,
+            "training_time_sec": 22.15
+        },
+        "full_features": {
+            "group_name": "Group 4: Full Feature Set",
+            "feature_count": 26,
+            "accuracy": 0.999889,
+            "macro_precision": 0.999821,
+            "macro_recall": 0.999761,
+            "macro_f1": 0.999791,
+            "weighted_f1": 0.999889,
+            "training_time_sec": 20.26
+        },
+        "scientific_finding": "Seismic features alone provided substantially weaker classification performance under the evaluated feature configuration (Macro F1 = 20.28%). Geographic coordinates elevate Macro F1 to 92.73%, while PB2002 kinematic metadata completes near-perfect discrimination (99.98%)."
+    },
+    "model_comparison": [
+        {
+            "model": "Tuned XGBoost",
+            "selected_final": true,
+            "accuracy": 0.9999,
+            "macro_precision": 0.9998,
+            "macro_recall": 0.9998,
+            "macro_f1": 0.9998,
+            "weighted_f1": 0.9999,
+            "training_time_sec": 19.0
+        },
+        {
+            "model": "Tuned LightGBM",
+            "selected_final": false,
+            "accuracy": 0.9998,
+            "macro_precision": 0.9997,
+            "macro_recall": 0.9997,
+            "macro_f1": 0.9997,
+            "weighted_f1": 0.9998,
+            "training_time_sec": 19.35
+        },
+        {
+            "model": "HistGradientBoosting",
+            "selected_final": false,
+            "accuracy": 0.9998,
+            "macro_precision": 0.9997,
+            "macro_recall": 0.9997,
+            "macro_f1": 0.9997,
+            "weighted_f1": 0.9998,
+            "training_time_sec": 30.19
+        },
+        {
+            "model": "LightGBM",
+            "selected_final": false,
+            "accuracy": 0.9998,
+            "macro_precision": 0.9996,
+            "macro_recall": 0.9996,
+            "macro_f1": 0.9996,
+            "weighted_f1": 0.9998,
+            "training_time_sec": 19.54
+        },
+        {
+            "model": "XGBoost",
+            "selected_final": false,
+            "accuracy": 0.9998,
+            "macro_precision": 0.9997,
+            "macro_recall": 0.9996,
+            "macro_f1": 0.9996,
+            "weighted_f1": 0.9998,
+            "training_time_sec": 21.25
+        },
+        {
+            "model": "RandomForest",
+            "selected_final": false,
+            "accuracy": 0.9998,
+            "macro_precision": 0.9997,
+            "macro_recall": 0.9996,
+            "macro_f1": 0.9996,
+            "weighted_f1": 0.9998,
+            "training_time_sec": 22.7
+        },
+        {
+            "model": "CatBoost",
+            "selected_final": false,
+            "accuracy": 0.9983,
+            "macro_precision": 0.9974,
+            "macro_recall": 0.9969,
+            "macro_f1": 0.9972,
+            "weighted_f1": 0.9983,
+            "training_time_sec": 43.23
+        },
+        {
+            "model": "LogisticRegression",
+            "selected_final": false,
+            "accuracy": 0.941,
+            "macro_precision": 0.906,
+            "macro_recall": 0.902,
+            "macro_f1": 0.9036,
+            "weighted_f1": 0.9407,
+            "training_time_sec": 21.92
+        },
+        {
+            "model": "DummyClassifier",
+            "selected_final": false,
+            "accuracy": 0.4811,
+            "macro_precision": 0.0687,
+            "macro_recall": 0.1429,
+            "macro_f1": 0.0928,
+            "weighted_f1": 0.3126,
+            "training_time_sec": 0.1
+        }
+    ],
+    "interpretability": {
+        "method": "SHAP (TreeExplainer)",
+        "sample_size": 2000,
+        "top_features": [
+            {
+                "feature": "divergent_component",
+                "mean_abs_shap": 2.031758
+            },
+            {
+                "feature": "boundary_elevation_m",
+                "mean_abs_shap": 1.445122
+            },
+            {
+                "feature": "absolute_divergent_component",
+                "mean_abs_shap": 0.877478
+            },
+            {
+                "feature": "seafloor_age_ma",
+                "mean_abs_shap": 0.408205
+            },
+            {
+                "feature": "absolute_right_lateral_component",
+                "mean_abs_shap": 0.389146
+            },
+            {
+                "feature": "relative_velocity",
+                "mean_abs_shap": 0.262591
+            },
+            {
+                "feature": "tectonic_motion_magnitude",
+                "mean_abs_shap": 0.220113
+            }
+        ],
+        "summary": "SHAP attribution demonstrates that boundary kinematics (divergence/transform motion) and bathymetric elevation are the dominant physical discriminators for plate boundary class assignment."
+    },
+    "scientific_limitations": [
+        "The target labels originate from the PB2002 boundary model rather than independent direct physical observations.",
+        "Several predictive variables are PB2002-derived kinematic and geometric properties; the model therefore partly reconstructs the relationship between PB2002 metadata and PB2002 labels.",
+        "Standard random stratified splitting allows earthquakes associated with the same continuous fault or trench to appear in both training and test partitions.",
+        "Boundary-aware disjoint evaluation provides a more challenging out-of-boundary test, yielding a Macro F1 of 79.35% rather than 99.98%.",
+        "TectonicSense is an environmental characterization and classification model; it is NOT an earthquake prediction or forecasting system.",
+        "The results reflect empirical classification performance under the evaluated PB2002 feature configuration, not universal physical causality."
+    ]
+}

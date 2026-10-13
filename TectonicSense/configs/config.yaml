@@ -1,0 +1,14 @@
+project:
+  name: TectonicSense
+  version: 0.1.0
+
+data:
+  raw_dir: data/raw
+  interim_dir: data/interim
+  processed_dir: data/processed
+
+models:
+  output_dir: models
+
+results:
+  output_dir: results

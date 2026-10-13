@@ -1,0 +1,55 @@
+{
+    "status": "PASSED",
+    "timestamp": "2026-10-14T00:36:16+00:00",
+    "api": {
+        "framework": "FastAPI",
+        "version": "0.116.1",
+        "service": "TectonicSense API",
+        "uvicorn_version": "0.35.0",
+        "pydantic_version": "2.11.7"
+    },
+    "endpoints": [
+        "/health",
+        "/model-info",
+        "/predict",
+        "/predict-batch",
+        "/docs",
+        "/redoc",
+        "/openapi.json"
+    ],
+    "tests": {
+        "total": 17,
+        "passed": 17,
+        "failed": 0,
+        "skipped": 0,
+        "duration_seconds": 10.10,
+        "test_suite": "api/tests/test_api.py"
+    },
+    "model": {
+        "name": "Tuned XGBoost",
+        "framework": "xgboost",
+        "framework_version": "3.0.5",
+        "feature_count": 26,
+        "class_count": 7,
+        "classes": [
+            "CCB",
+            "CRB",
+            "CTF",
+            "OCB",
+            "OSR",
+            "OTF",
+            "SUB"
+        ]
+    },
+    "manual_verification": {
+        "host": "127.0.0.1",
+        "port": 8000,
+        "health_check": "200 OK",
+        "model_info_check": "200 OK",
+        "docs_check": "200 OK",
+        "redoc_check": "200 OK",
+        "predict_single_check": "200 OK",
+        "predict_batch_check": "200 OK",
+        "status": "VERIFIED"
+    }
+}

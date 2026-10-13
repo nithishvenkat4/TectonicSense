@@ -1,0 +1,89 @@
+{
+    "rows": 239757,
+    "columns": 23,
+    "duplicate_rows": 0,
+    "duplicate_event_ids": 0,
+    "missing_values": 0,
+    "class_distribution": {
+        "CCB": 27080,
+        "CRB": 26333,
+        "CTF": 17320,
+        "OCB": 9874,
+        "OSR": 26048,
+        "OTF": 17606,
+        "SUB": 115496
+    },
+    "distance_statistics_km": {
+        "minimum": 0.055522200428068,
+        "q25": 34.152307055807015,
+        "median": 71.9408148158017,
+        "mean": 125.43101156350164,
+        "q75": 143.28597673125523,
+        "q90": 263.3490570793214,
+        "q95": 367.80972794265364,
+        "q99": 1011.4618707695369,
+        "maximum": 3672.0762586537912
+    },
+    "threshold_analysis": [
+        {
+            "threshold_km": 10,
+            "retained_events": 9989,
+            "retention_percent": 4.166,
+            "removed_events": 229768
+        },
+        {
+            "threshold_km": 25,
+            "retained_events": 40578,
+            "retention_percent": 16.925,
+            "removed_events": 199179
+        },
+        {
+            "threshold_km": 50,
+            "retained_events": 88286,
+            "retention_percent": 36.823,
+            "removed_events": 151471
+        },
+        {
+            "threshold_km": 100,
+            "retained_events": 150593,
+            "retention_percent": 62.811,
+            "removed_events": 89164
+        },
+        {
+            "threshold_km": 150,
+            "retained_events": 182964,
+            "retention_percent": 76.312,
+            "removed_events": 56793
+        },
+        {
+            "threshold_km": 200,
+            "retained_events": 200691,
+            "retention_percent": 83.706,
+            "removed_events": 39066
+        },
+        {
+            "threshold_km": 300,
+            "retained_events": 222140,
+            "retention_percent": 92.652,
+            "removed_events": 17617
+        },
+        {
+            "threshold_km": 500,
+            "retained_events": 231973,
+            "retention_percent": 96.753,
+            "removed_events": 7784
+        },
+        {
+            "threshold_km": 1000,
+            "retained_events": 237308,
+            "retention_percent": 98.979,
+            "removed_events": 2449
+        },
+        {
+            "threshold_km": 2000,
+            "retained_events": 239482,
+            "retention_percent": 99.885,
+            "removed_events": 275
+        }
+    ]
+}

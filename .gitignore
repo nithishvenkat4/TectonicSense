@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large USGS raw data
+data/raw/usgs/*.csv
+
+# Large generated datasets
+data/interim/*.csv
+data/processed/*.csv
+
+# Generated figures
+results/figures/*.png
+results/figures/*.jpg
+results/figures/*.jpeg
+
+# Generated model files
+models/*.joblib
+models/*.pkl
+models/*.h5
+models/*.keras
+models/*.pt
+models/*.pth
+
+# Generated predictions
+results/predictions/*.csv
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

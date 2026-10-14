@@ -1,6 +1,6 @@
 import React from 'react';
+import { Database, Award } from 'lucide-react';
 import { MODEL_BENCHMARKS, GENERALIZATION_BENCHMARKS } from '../data/constants';
-import { Database, ShieldAlert, Award } from 'lucide-react';
 
 export const BenchmarksView: React.FC = () => {
   return (
@@ -123,16 +123,6 @@ export const BenchmarksView: React.FC = () => {
             </div>
           </div>
           <p className="gen-desc">{GENERALIZATION_BENCHMARKS.boundaryAware.description}</p>
-        </div>
-      </div>
-
-      {/* Scientific Integrity Note */}
-      <div className="alert-card">
-        <ShieldAlert size={16} className="alert-icon text-amber-700" />
-        <div className="alert-text text-xs text-amber-900">
-          <strong>Scientific Evaluation Standard: </strong>
-          The 79.35% macro F1 on the group-disjoint boundary split demonstrates true structural transfer to completely unseen tectonic boundaries,
-          confirming that the model learns genuine geophysical plate kinetics rather than merely memorizing geographic boundary coordinates.
         </div>
       </div>
     </div>

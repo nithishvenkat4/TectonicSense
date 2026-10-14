@@ -1,7 +1,7 @@
 import React from 'react';
 import { GLOBAL_SHAP_FEATURES } from '../data/constants';
+import { Layers, Info, BarChart3 } from 'lucide-react';
 import type { ModelInfoResponse } from '../types';
-import { Layers, Info, CheckCircle, BarChart3 } from 'lucide-react';
 
 interface ModelExplanationProps {
   modelInfo: ModelInfoResponse | null;
@@ -117,10 +117,6 @@ export const ModelExplanation: React.FC<ModelExplanationProps> = ({ modelInfo })
             Oceanic transform faults (OTF) and continental transforms (CTF) are characterized by dominant lateral shear motion
             with minimal divergence, enabling clean separation from pure spreading or convergent boundaries.
           </p>
-        </div>
-        <div className="mt-3 pt-2 border-t border-slate-100 flex items-center space-x-2 text-[11px] text-emerald-800">
-          <CheckCircle size={14} className="text-emerald-600" />
-          <span>All 26 production features are derived without circular target leakage.</span>
         </div>
       </div>
     </div>

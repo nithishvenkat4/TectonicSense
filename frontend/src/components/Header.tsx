@@ -15,14 +15,11 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="site-header">
       <div className="header-container">
-        {/* Left: Branding & Subtitle */}
+        {/* Left: Branding */}
         <div className="branding">
-          <div className="brand-logo">
-            <span className="brand-title">TECTONICSENSE</span>
-            <span className="brand-tag">v1.0 RESEARCH</span>
-          </div>
+          <span className="brand-title">TECTONICSENSE</span>
           <span className="brand-subtitle">
-            PB2002 Tectonic Plate Boundary Regime Classification System
+            Tectonic Boundary Classification
           </span>
         </div>
 

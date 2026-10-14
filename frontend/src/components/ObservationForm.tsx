@@ -48,39 +48,39 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
       <div className="section-header">
         <div className="section-title-wrap">
           <Compass size={16} className="section-icon" />
-          <h2 className="section-title">Seismic & Geospatial Observation Input</h2>
+          <h2 className="section-title">Observation Parameters</h2>
         </div>
-        <span className="section-subtitle">
-          Enter event hypocenter, boundary geometry, and kinematic vectors
-        </span>
       </div>
 
-      {/* Preset Selector & Quick Action Bar */}
+      {/* Preset Selector */}
       <div className="preset-selector-row">
         <label htmlFor="preset-select" className="preset-label">
-          Load Reference Geological Event:
+          Reference Geological Event
         </label>
-        <select
-          id="preset-select"
-          className="preset-select"
-          onChange={(e) => handlePresetSelect(e.target.value)}
-          defaultValue={PRESETS[0].name}
-        >
-          {PRESETS.map((p) => (
-            <option key={p.name} value={p.name}>
-              [{p.class}] {p.name} — {p.location}
-            </option>
-          ))}
-        </select>
-        <button
-          id="btn-classify-top"
-          type="submit"
-          disabled={isLoading}
-          className="btn-primary btn-block"
-        >
-          <Play size={14} />
-          <span>{isLoading ? 'Classifying via FastAPI...' : 'Execute PB2002 Classification'}</span>
-        </button>
+        <div className="preset-input-group">
+          <select
+            id="preset-select"
+            className="preset-select"
+            onChange={(e) => handlePresetSelect(e.target.value)}
+            defaultValue={PRESETS[0].name}
+          >
+            {PRESETS.map((p) => (
+              <option key={p.name} value={p.name}>
+                [{p.class}] {p.name} — {p.location}
+              </option>
+            ))}
+          </select>
+          <button
+            id="btn-classify-top"
+            type="submit"
+            disabled={isLoading}
+            className="btn-primary btn-quick"
+            title="Execute classification"
+          >
+            <Play size={13} />
+            <span>{isLoading ? '...' : 'Classify'}</span>
+          </button>
+        </div>
       </div>
 
       <div className="form-grid">
@@ -100,7 +100,6 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('latitude', e.target.value)}
                 required
               />
-              <span className="field-hint">-90° (South) to +90° (North)</span>
             </div>
             <div className="input-field">
               <label htmlFor="input-longitude">Longitude (°)</label>
@@ -114,7 +113,6 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('longitude', e.target.value)}
                 required
               />
-              <span className="field-hint">-180° (West) to +180° (East)</span>
             </div>
           </div>
           <div className="input-row">
@@ -130,7 +128,6 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('magnitude', e.target.value)}
                 required
               />
-              <span className="field-hint">Moment magnitude scale</span>
             </div>
             <div className="input-field">
               <label htmlFor="input-depth">Focal Depth (km)</label>
@@ -144,7 +141,6 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('depth_km', e.target.value)}
                 required
               />
-              <span className="field-hint">Depth to hypocenter (km)</span>
             </div>
           </div>
         </fieldset>
@@ -165,7 +161,6 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('boundary_distance_km', e.target.value)}
                 required
               />
-              <span className="field-hint">Proximity to nearest plate boundary</span>
             </div>
             <div className="input-field">
               <label htmlFor="input-boundary-length">Segment Length (km)</label>
@@ -179,7 +174,6 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('boundary_length_km', e.target.value)}
                 required
               />
-              <span className="field-hint">Length of boundary polyline step</span>
             </div>
           </div>
           <div className="input-row">
@@ -195,7 +189,6 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('boundary_azimuth_deg', e.target.value)}
                 required
               />
-              <span className="field-hint">Clockwise from North (0° - 360°)</span>
             </div>
             <div className="input-field">
               <label htmlFor="input-elevation">Boundary Elevation / Depth (m)</label>
@@ -209,7 +202,6 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('boundary_elevation_m', e.target.value)}
                 required
               />
-              <span className="field-hint">Negative = Trench/Ocean, Positive = Plateau</span>
             </div>
           </div>
         </fieldset>
@@ -230,7 +222,6 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('relative_velocity', e.target.value)}
                 required
               />
-              <span className="field-hint">PB2002 plate motion rate</span>
             </div>
             <div className="input-field">
               <label htmlFor="input-velocity-azimuth">Velocity Azimuth (°)</label>
@@ -244,7 +235,6 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('velocity_azimuth_deg', e.target.value)}
                 required
               />
-              <span className="field-hint">Motion direction relative to North</span>
             </div>
           </div>
           <div className="input-row">
@@ -260,7 +250,6 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('divergent_component', e.target.value)}
                 required
               />
-              <span className="field-hint">&lt;0 = Convergence / Subduction, &gt;0 = Spreading</span>
             </div>
             <div className="input-field">
               <label htmlFor="input-right-lateral-comp">Right-Lateral Motion (mm/yr)</label>
@@ -274,12 +263,11 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('right_lateral_component', e.target.value)}
                 required
               />
-              <span className="field-hint">Strike-slip transform component</span>
             </div>
           </div>
         </fieldset>
 
-        {/* Geological Context */}
+        {/* Crustal Setting */}
         <fieldset className="form-group-card">
           <legend className="group-legend">4. Crustal & Geological Setting</legend>
           <div className="input-row">
@@ -295,7 +283,6 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 onChange={(e) => handleInputChange('seafloor_age_ma', e.target.value)}
                 required
               />
-              <span className="field-hint">0 Ma = Spreading ridge; 200+ Ma = Ancient/Continent</span>
             </div>
             <div className="input-field">
               <label htmlFor="input-orogen-flag">Orogen Belt Flag</label>
@@ -304,28 +291,10 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
                 value={values.orogen_flag}
                 onChange={(e) => handleInputChange('orogen_flag', parseInt(e.target.value, 10))}
               >
-                <option value={0}>0 — Oceanic / Stable Craton Lithosphere</option>
-                <option value={1}>1 — Active Continental Orogen Belt</option>
+                <option value={0}>0 — Oceanic / Stable Craton</option>
+                <option value={1}>1 — Active Orogen Belt</option>
               </select>
-              <span className="field-hint">PB2002 orogenic deformation zone</span>
             </div>
-          </div>
-
-          {/* Quick status recap */}
-          <div className="input-recap">
-            <span className="recap-label">Vector Magnitude:</span>
-            <span className="recap-val">
-              {Math.hypot(values.divergent_component, values.right_lateral_component).toFixed(1)} mm/yr
-            </span>
-            <span className="recap-sep">•</span>
-            <span className="recap-label">Motion Regime:</span>
-            <span className="recap-val font-semibold">
-              {values.divergent_component < -5
-                ? 'Compressional / Convergent'
-                : values.divergent_component > 5
-                ? 'Extensional / Divergent'
-                : 'Conservative / Strike-Slip'}
-            </span>
           </div>
         </fieldset>
       </div>
@@ -338,7 +307,7 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
           disabled={isLoading}
           className="btn-primary"
         >
-          <Play size={15} />
+          <Play size={14} />
           <span>{isLoading ? 'Classifying via FastAPI...' : 'Execute PB2002 Classification'}</span>
         </button>
 
@@ -348,9 +317,9 @@ export const ObservationForm: React.FC<ObservationFormProps> = ({
           onClick={onReset}
           disabled={isLoading}
           className="btn-secondary"
-          title="Reset to initial Kermadec reference event"
+          title="Reset to default event"
         >
-          <RotateCcw size={14} />
+          <RotateCcw size={13} />
           <span>Reset Defaults</span>
         </button>
 

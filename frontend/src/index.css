@@ -89,30 +89,12 @@ body {
   flex-direction: column;
 }
 
-.brand-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
 .brand-title {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 17px;
+  font-size: 16px;
   letter-spacing: 0.08em;
   color: var(--text-primary);
-}
-
-.brand-tag {
-  font-size: 10px;
-  font-weight: 600;
-  font-family: var(--font-mono);
-  background-color: var(--bg-tertiary);
-  color: var(--text-secondary);
-  padding: 1px 6px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-light);
-  letter-spacing: 0.05em;
 }
 
 .brand-subtitle {
@@ -339,64 +321,85 @@ body {
 }
 
 .preset-selector-row {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 
 .preset-label {
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: var(--text-secondary);
 }
 
-.preset-select {
-  width: 100%;
-  padding: 7px 10px;
+.preset-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.preset-input-group .preset-select {
+  flex: 1;
+  min-width: 0;
+  height: 36px;
+  padding: 0 10px;
   font-size: 12px;
   color: var(--text-primary);
-  background-color: var(--bg-secondary);
+  background-color: #ffffff;
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-sm);
   outline: none;
   cursor: pointer;
+  transition: all 0.15s ease;
 }
 
-.preset-select:focus {
-  border-color: #2563eb;
-  background-color: #ffffff;
+.preset-input-group .preset-select:focus {
+  border-color: #0f172a;
+  box-shadow: 0 0 0 1px #0f172a;
+}
+
+.preset-input-group .btn-quick {
+  height: 36px;
+  padding: 0 14px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .form-grid {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .form-group-card {
-  border: 1px solid var(--border-light);
+  border: 1px solid #e2e8f0;
   border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  background-color: #fafbfc;
+  padding: 10px 12px;
+  background-color: #f8fafc;
 }
 
 .group-legend {
   font-size: 11px;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: #475569;
   padding: 0 4px;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 
 .input-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 10px;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
 .input-row:last-child {
@@ -411,66 +414,41 @@ body {
 
 .input-field label {
   font-size: 11px;
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .input-field input,
 .input-field select {
-  padding: 6px 8px;
+  height: 34px;
+  padding: 0 9px;
   font-size: 12px;
   font-family: var(--font-mono);
   background-color: #ffffff;
-  border: 1px solid var(--border-medium);
+  border: 1px solid #cbd5e1;
   border-radius: var(--radius-sm);
-  color: var(--text-primary);
+  color: #0f172a;
   outline: none;
-  transition: border-color 0.15s;
+  transition: all 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .input-field input:focus,
 .input-field select:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
-}
-
-.field-hint {
-  font-size: 10px;
-  color: var(--text-subtle);
-  line-height: 1.2;
-}
-
-.input-recap {
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px dashed var(--border-light);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-}
-
-.recap-label {
-  color: var(--text-muted);
-}
-
-.recap-val {
-  font-family: var(--font-mono);
-  color: var(--text-primary);
-}
-
-.recap-sep {
-  color: var(--border-dark);
+  border-color: #0f172a;
+  box-shadow: 0 0 0 1px #0f172a;
 }
 
 .form-actions-row {
-  margin-top: 16px;
+  margin-top: 14px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border-light);
+  gap: 8px;
 }
 
 .btn-primary {

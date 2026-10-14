@@ -5,7 +5,6 @@ import { TectonicMap } from './components/TectonicMap';
 import { PredictionResult } from './components/PredictionResult';
 import { ModelExplanation } from './components/ModelExplanation';
 import { BenchmarksView } from './components/BenchmarksView';
-import { Footer } from './components/Footer';
 
 import { PRESETS } from './data/presets';
 import { checkHealth, getModelInfo, deriveFeatures, predictSingle } from './services/api';
@@ -180,8 +179,6 @@ export function App() {
           </div>
         )}
       </main>
-
-      <Footer />
     </div>
   );
 }
